@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% load bootstrap4 %}
+{% load crispy_forms_tags %}
+{% block head %}
+
+{% endblock head %}
+{% block body %}
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <section class="box">
+        <div class="container">
+            <div class="top-header">
+                <h3>Add Service</h3>
+            </div>
+
+            <div class="input-field">
+                {{form.service_image|as_crispy_field}}
+                {% comment %} <input type="text" class="input" placeholder="Username" required> {% endcomment %}
+            </div>
+
+
+            <div class="input-btn">
+                <input type="submit" class="submit" value="ADD">
+            </div>
+        </div>
+    </section>
+</form>
+{% endblock body %}

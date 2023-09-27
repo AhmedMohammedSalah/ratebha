@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% load bootstrap4 %}
+{% load crispy_forms_tags %}
+{% block head %}
+
+{% endblock head %}
+{% block body %}
+    <section class="service" id="service">
+        <div class="content">
+            <div class="title">
+                <h3>Birthday</h3>
+            </div>
+
+            <a href="{% url 'celebrate' %}">
+                <div class="card">
+                    <div class="icon">
+                        <img src="{% static 'imgs/Hall/pexels-fu-zhichao-587741.jpg' %}" alt="" class="photo">
+                    </div>
+
+                    <div class="name">
+                        <h3>Place</h3>
+                    </div>
+                </div>
+            </a>
+
+            <a href="{% url 'photographer' %}">
+                <div class="card">
+                    <div class="icon">
+                        <img src="{% static 'imgs/Photographer\pexels-picjumbocom-225227.jpg' %}" alt="" class="photo">
+                    </div>
+
+                    <div class="name">
+                        <h3>Photographer</h3>
+                    </div>
+                </div>
+            </a>
+
+            <a href="{% url 'decoration' %}">
+                <div class="card">
+                    <div class="icon">
+                        <img src="{% static 'imgs/Decoration/pexels-ylanite-koppens-796606.jpg' %}" alt="" class="photo">
+                    </div>
+
+                    <div class="name">
+                            <h3>Decoration</h3>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+{% endblock body %}

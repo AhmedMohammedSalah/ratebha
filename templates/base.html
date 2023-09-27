@@ -1,0 +1,176 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'styles/Home.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/login.css' %}">
+    
+    {% block head %}
+        
+    {% endblock head %}
+        
+    <title>Home</title>
+</head>
+
+<body>
+    <header>
+        <div class="image">
+            <a href="{% url 'home' %}"><img src="{% static 'imgs/Asset 1.png' %}"></a>
+        </div>
+        <a href="{% url 'home' %}" class="logo">Ratbha</a>
+       
+        {% if request.user.is_authenticated %}
+        <h3 style="color:white">Hello {{request.user.username}}</h3>
+    {% endif %}
+        <nav class="navegation">
+        
+            <a href="#">
+                <input type="text" placeholder="Search here...">
+            </a>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="#service">Services</a>
+          
+            {% if request.user.is_authenticated %}
+
+            <a href="{% url 'accounts:profile' %}">Profile </a>
+                <a href="{% url 'logout' %}">Logout</a>
+            {% else %}
+
+                <a href="{% url 'accounts:login' %}">Login</a>
+
+            {% endif %}
+                
+        </nav>
+    </header>
+    
+{% block body %}
+    <section class="home" id="home">
+        <div>
+            <h2>Welcome to our Events Organization Community</h2>
+
+            <h3>Our Community Organize diffrent kinds of parties or Events as organizing a Wedding Party or organizing
+                Graduation Event</h3>
+
+            <section class="searth">
+                <input type="text" placeholder="Search here...">
+
+                <a href="#" id="searchbar">
+                    <i class="fas fa-search"></i>
+                </a>
+            </section>
+            <div class="social">
+                <a href="a"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="a"><i class="fa-brands fa-instagram"></i></a>
+                <a href="a"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="a"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </section>
+    <section class="service" id="service">
+        <div class="content">
+            <div class="title">
+                <h3>Services</h3>
+            </div>
+            
+            <a href="{% url 'wedding' %}">
+                <div class="card">
+                    <div class="icon">
+                        <img src="{% static 'imgs\Service\pexels-juliano-astc-13884984.jpg' %}" alt="" class="photo">
+                    </div>
+
+                    <div class="name">
+                        <h3>Wedding</h3>
+                    </div>
+                </div>
+            </a>
+
+            <a href="{% url 'party' %}">
+                <div class="card">
+                    <div class="icon">
+                        <img src="{% static 'imgs\Service\pexels-marcin-dampc-1684187.jpg' %}" alt="" class="photo">
+                    </div>
+
+                    <div class="name">
+                        <h3>Party</h3>
+                    </div>
+                </div>
+            </a>
+
+            <a href="{% url 'engagement' %}">
+                <div class="card">
+                    <div class="icon">
+                        <img src="{% static 'imgs\Service\sandy-millar-8vaQKYnawHw-unsplash.jpg' %}" alt="" class="photo">
+                    </div>
+
+                    <div class="name">
+                        <h3>Engagement</h3>
+                    </div>
+                </div>
+            </a>
+
+            <a href="{% url 'event' %}">
+                <div class="card">
+                    <div class="icon">
+                        <img src="{% static 'imgs\Service\pexels-asia-culture-center-4940642.jpg' %}" alt="" class="photo">
+                    </div>
+
+                    <div class="name">
+                        <h3>Event</h3>
+                    </div>
+                </div>
+            </a>
+
+            <a href="{% url 'graduation' %}">
+                <div class="card">
+                    <div class="icon">
+                        <img src="{% static 'imgs\Service\pexels-pixabay-267885.jpg' %}" alt="" class="photo">
+                    </div>
+
+                    <div class="name">
+                        <h3>Graduation</h3>
+                    </div>
+                </div>
+            </a>
+
+            <a href="{% url 'birthday' %}">
+                <div class="card">
+                    <div class="icon">
+                        <img src="{% static 'imgs\Service\pexels-cottonbro-studio-4684265.jpg' %}" alt="" class="photo">
+                    </div>
+
+                    <div class="name">
+                        <h3>Birthday</h3>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+{% endblock body %}
+        
+   
+
+    <footer class="footer">
+        <p class="copyrights">CopyRights@ Ratbha Team</p>
+
+        <div class="social">
+            <a href=""><i class="fa-brands fa-android"></i></a>
+            <a href="a"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="a"><i class="fa-brands fa-instagram"></i></a>
+            <a href="a"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="a"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+    </footer>
+    
+    {% block scripts %}
+        
+    {% endblock scripts %}
+        
+</body>
+
+</html>

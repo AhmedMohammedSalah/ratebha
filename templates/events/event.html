@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% load bootstrap4 %}
+{% load crispy_forms_tags %}
+{% block head %}
+
+{% endblock head %}
+{% block body %}
+    <section class="service" id="service">
+        <div class="content">
+            <div class="title">
+                <h3>Event</h3>
+            </div>
+
+            <a href="{% url 'workspace' %}">
+                <div class="card">
+                    <div class="icon">
+                        <img src="{% static 'imgs/Hall/pexels-tima-miroshnichenko-7991180.jpg'%}" alt="" class="photo">
+                    </div>
+
+                    <div class="name">
+                            <h3>Hall</h3>
+                    </div>
+                </div>
+            </a>
+
+            <a href="{% url 'photographer' %}">
+                <div class="card">
+                    <div class="icon">
+                        <img src="{% static 'imgs/Photographer\pexels-picjumbocom-225227.jpg'%}" alt="" class="photo">
+                    </div>
+
+                    <div class="name">
+                            <h3>Photographer</h3>
+                    </div>
+                </div>
+            </a>
+
+            <a href="{% url 'decoration' %}">
+                <div class="card">
+                    <div class="icon">
+                        <img src="{% static 'imgs/Decoration/pexels-layton-findlater-1165869.jpg'%}" alt="" class="photo">
+                    </div>
+
+                    <div class="name">
+                            <h3>Decoration</h3>
+                    </div>
+                </div>
+            </a>
+
+            <a href="{% url 'hotel' %}">
+                <div class="card">
+                    <div class="icon">
+                        <img src="{% static 'imgs/Hotel/pexels-boonkong-boonpeng-1134176.jpg'%}" alt="" class="photo">
+                    </div>
+
+                    <div class="name">
+                            <h3>Hotel</h3>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    {% endblock body %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    
+    
+    <section class="box">
+        <div class="container">
+            <div class="kind">
+                <a href="{% url 'accounts:signup_customer' %}"><button>Normal Customer</button></a>
+                <a href="{% url 'accounts:signup_service_provider' %}"><button>Service Provider</button></a>
+            </div>
+        </div>
+    </section>
+
+{% endblock body %}

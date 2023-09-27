@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% load bootstrap4 %}
+{% load crispy_forms_tags %}
+{% block head %}
+
+{% endblock head %}
+{% block body %}
+    <section class="service" id="service">
+        <div class="content">
+            <div class="title">
+                <h3>Engagement</h3>
+            </div>
+
+            <a href="{% url 'hall' %}">
+                <div class="card">
+                    <div class="icon">
+                        <img src="{% static 'imgs\Hall\pexels-motioncoloursphotography-lawrence-okyere-kwapong-7856735.jpg' %}" alt="" class="photo">
+                    </div>
+
+                    <div class="name">
+                            <h3>Hall</h3>
+                    </div>
+                </div>
+            </a>
+
+            <a href="{% url 'photographer' %}">
+                <div class="card">
+                    <div class="icon">
+                        <img src="{% static 'imgs\Photographer\pexels-picjumbocom-225227.jpg' %}" alt="" class="photo">
+                    </div>
+
+                    <div class="name">
+                            <h3>Photographer</h3>
+                    </div>
+                </div>
+            </a>
+
+            <a href="{% url 'decoration' %}">
+                <div class="card">
+                    <div class="icon">
+                        <img src="{% static 'imgs\Decoration/pexels-asad-photo-maldives-169190.jpg' %}" alt="" class="photo">
+                    </div>
+
+                    <div class="name">
+                            <h3>Decoration</h3>
+                    </div>
+                </div>
+            </a>
+
+            <a href="{% url 'makup'  %}">
+                <div class="card">
+                    <div class="icon">
+                        <img src="{% static 'imgs\Makup-artist\pexels-anderson-guerra-1115128.jpg' %}" alt="" class="photo">
+                    </div>
+
+                    <div class="name">
+                            <h3>Makup-artist</h3>
+                    </div>
+                </div>
+            </a>
+
+            <a href="{% url 'SuitsDress' %}">
+                <div class="card">
+                    <div class="icon">
+                        <img src="{% static 'imgs\Clothes\pexels-antonio-sokic-3839432.jpg' %}" alt="" class="photo">
+                    </div>
+
+                    <div class="name">
+                            <h3>Suits & Dress</h3>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    {% endblock body %}

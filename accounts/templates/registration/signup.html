@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+{% load crispy_forms_tags %}
+
+{% block body %}
+<form method="post">
+    {% csrf_token %}
+    <section class="box">
+        <div class="container">
+            <div class="top-header">
+                <h3>Sign Up</h3>
+            </div>
+
+            <div class="input-field">
+                {{form.username|as_crispy_field}}
+                {% comment %} <input type="text" class="input" placeholder="Username" required> {% endcomment %}
+            </div>
+
+            <div class="input-field">
+                {{form.phone|as_crispy_field}}
+                
+                {% comment %} <input type="text" class="input" placeholder="Phone Number" required> {% endcomment %}
+            </div>
+
+            <div class="input-field">
+                {{form.email|as_crispy_field}}
+                {% comment %} <input type="email" class="input" placeholder="E-mail" required> {% endcomment %}
+            </div>
+
+            <div class="input-field">
+                {{form.password1|as_crispy_field}}
+                {% comment %} <input type="password" class="input" placeholder="Password" required> {% endcomment %}
+            </div>
+
+            <div class="input-field">
+                {{form.password2|as_crispy_field}}
+                {% comment %} <input type="password" class="input" placeholder="Confirm your Password" required> {% endcomment %}
+            </div>
+
+            <div class="input-field">
+                {{form.address|as_crispy_field}}
+                {% comment %} <input type="text" class="input" placeholder="Address" required> {% endcomment %}
+            </div>
+
+            <div class="input-btn">
+                <input type="submit" class="submit" value="Sign Up">
+            </div>
+        </div>
+    </section>
+</form>
+{% endblock body %}
+

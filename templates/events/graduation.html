@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% load bootstrap4 %}
+{% load crispy_forms_tags %}
+{% block head %}
+
+{% endblock head %}
+{% block body %}
+    <section class="service" id="service">
+        <div class="content">
+            <div class="title">
+                <h3>Graduation</h3>
+            </div>
+
+            <a href="{% url 'workspace' %}">
+                <div class="card">
+                    <div class="icon">
+                        <img src="{% static 'imgs/Hall/pexels-tima-miroshnichenko-7991180.jpg'%}" alt="" class="photo">
+                    </div>
+
+                    <div class="name">
+                        <h3>Hall</h3>
+                    </div>
+                </div>
+            </a>
+
+            <a href="{% url 'photographer' %}">
+                <div class="card">
+                    <div class="icon">
+                        <img src="{% static 'imgs/Photographer\pexels-picjumbocom-225227.jpg'%}" alt="" class="photo">
+                    </div>
+
+                    <div class="name">
+                        <h3>Photo-Grapher</h3>
+                    </div>
+                </div>
+            </a>
+
+            <a href="{% url 'decoration' %}">
+                <div class="card">
+                    <div class="icon">
+                        <img src="{% static 'imgs/Decoration/pexels-rodnae-productions-7842672.jpg'%}" alt="" class="photo">
+                    </div>
+
+                    <div class="name">
+                        <h3>Decoration</h3>
+                    </div>
+                </div>
+            </a>
+
+            <a href="{% url 'dj' %}">
+                <div class="card">
+                    <div class="icon">
+                        <img src="{% static 'imgs/DJ\pexels-stephen-niemeier-63703.jpg'%}" alt="" class="photo">
+                    </div>
+
+                    <div class="name">
+                        <h3>Sound System</h3>
+                    </div>
+                </div>
+            </a>
+
+            <a href="{% url 'uniform' %}">
+                <div class="card">
+                    <div class="icon">
+                        <img src="{% static 'imgs/Clothes/pexels-pavel-danilyuk-7944035.jpg'%}" alt="" class="photo">
+                    </div>
+
+                    <div class="name">
+                        <h3>Uniforms</h3>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    
+{% endblock body %}

@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% load bootstrap4 %}
+{% load crispy_forms_tags %}
+{% block head %}
+
+{% endblock head %}
+{% block body %}
+
+    <section class="service" id="service">
+        <div class="content">
+            <div class="title">
+                <h3>Photographer</h3>
+            </div>    
+
+            <a href="">
+                <div class="card">
+                    <div class="circle">
+                        <img src="{% static 'imgs\Photographer\photo_2023-03-06_10-16-53.jpg'%}" alt="" class="photo">
+                    </div>
+
+                    <div class="name">
+                        <h3>She tos</h3>
+                    </div>
+                </div>
+            </a>
+
+            <a href="{% url 'nn' %}">
+                <div class="card">
+                    <div class="circle">
+                        <img src="{% static 'imgs\Photographer\person2.jpg'%}" alt="" class="photo">
+                    </div>
+
+                    <div class="name">
+                        <h3>Tarek Ghanem</h3>
+                    </div>
+                </div>
+            </a>
+
+            <a href="">
+                <div class="card">
+                    <div class="circle">
+                        <img src="{% static 'imgs\Photographer\265535793_293040516163865_1870045905731915096_n.jpg'%}" alt="" class="photo">
+                    </div>
+
+                    <div class="name">
+                        <h3>Bishoy Amir</h3>
+                    </div>
+                </div>
+            </a>
+
+            <a href="{% url 'mm' %}">
+                <div class="card">
+                    <div class="circle">
+                        <img src="{% static 'imgs\Photographer\307929827_499066055558464_5568711281823044910_n.jpg'%}" alt="" class="photo">
+                    </div>
+
+                    <div class="name">
+                        <h3>Mohamed Montaser</h3>
+                    </div>
+                </div>
+            </a>
+
+            <a href="">
+                <div class="card">
+                    <div class="circle">
+                        <img src="{% static 'imgs\Photographer\photo_2023-03-06_10-03-11.jpg'%}" alt="" class="photo">
+                    </div>
+
+                    <div class="name">
+                        <h3>Mohamed Sobhy</h3>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+    {% endblock body %}

@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% load bootstrap4 %}
+{% load crispy_forms_tags %}
+        <div class="container">
+            <div class="log-text">
+                <h1>Login</h1>
+                
+            </div>
+
+{% block body %}
+<form method="post">
+    {% csrf_token %}
+    <section class="box">
+        <div class="container">
+            <div class="top-header">
+                <h3>Login</h3>
+            </div>
+
+            <div class="input-field">
+                {{form.username|as_crispy_field}}
+                {% comment %} <input type="text" class="input" placeholder="Username" required> {% endcomment %}
+            </div>
+
+            <div class="input-field">
+                {{form.password|as_crispy_field}}
+                {% comment %} <input type="password" class="input" placeholder="Password" required> {% endcomment %}
+            </div>
+
+            <div class="input-btn">
+                <input type="submit" class="submit" value="Login">
+            </div>
+
+            <div class="bottom">
+                <div class="left">
+                    <input type="checkbox" id="checkbox" class="checkbox">
+                    <label for="checkbox">Remember Me</label>
+                </div>
+                
+
+                <div class="right">
+                    <label><a href="{% url 'password_reset' %}">Forget Password ?</a></label>
+                </div>
+            </div>
+            <div>
+                <span><a href="{% url 'accounts:signup_choose' %}"> Don't have an account.</a></span>
+            </div>
+        </div>{% if form.errors %}
+        <p>Your username and password didn't match. Please try again.</p>
+      {% endif %}
+    
+    
+    </section>
+    
+</form>
+{% endblock body %}
+{% if next %}
+    {% if user.is_authenticated %}
+      <p style="color:red">Your account doesn't have access to this page. To proceed,
+      please login with an account that has access.</p>
+    {% else %}
+      <p style="color:red">Please login to see this page.</p>
+    {% endif %}
+  {% endif %}
+    
